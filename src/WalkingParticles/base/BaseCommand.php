@@ -22,6 +22,7 @@ namespace WalkingParticles\base;
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\CommandExecutor;
 use WalkingParticles\WalkingParticles;
+use pocketmine\utils\Config;
 
 abstract class BaseCommand extends PluginBase implements CommandExecutor{
 
@@ -39,7 +40,7 @@ abstract class BaseCommand extends PluginBase implements CommandExecutor{
 		return $this->plugin;
 	}
 
-	public final function getConfig(): Config{
+	public final function getConfig() : Config{
 		return $this->plugin->getConfig();
 	}
 
