@@ -39,7 +39,7 @@ abstract class BaseCommand extends PluginBase implements CommandExecutor{
 		return $this->plugin;
 	}
 
-	public function getConfig(){
+	public final function getConfig(): Config{
 		return $this->plugin->getConfig();
 	}
 
