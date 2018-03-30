@@ -109,17 +109,6 @@ class WalkingParticles extends PluginBase{
 		));
 		$this->data3 = new Config($this->getDataFolder() . "temp1.yml", Config::YAML, array());
 		$this->updateConfig();
-		if(! file_exists($this->getServer()->getDataPath() . "plugins/WalkingParticles_v" . self::VERSION . ".phar")){
-			if(is_dir($this->getServer()->getDataPath() . "plugins/WalkingParticles-master")){
-				$this->getLogger()->notice($this->colorMessage("Non-packaged WalkingParticles detected running on the server!"));
-				$this->getLogger()->notice($this->colorMessage("Packaged(phar) is recommended to be used for production servers!"));
-			} else{
-				$this->getLogger()->notice($this->colorMessage("Non-official WalkingParticles package found using on this server!"));
-				$this->getLogger()->notice($this->colorMessage("Please use WalkingParticles file downloaded in Github or PocketMine!"));
-				$this->getServer()->getPluginManager()->disablePlugin($this);
-				return;
-			}
-		}
 		$this->getLogger()->info("Loading economy plugins..");
 		$plugins = [
 				"EconomyAPI",
